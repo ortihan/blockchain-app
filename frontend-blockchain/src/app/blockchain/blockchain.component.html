@@ -1,0 +1,45 @@
+
+<div *ngFor="let block of blockchain; let n=index" class="background">
+  <nz-card [nzTitle]="'Block ' + n">
+    <div class="block-data">Timestamp: </div><span>{{ block.timestamp }}</span><br>
+    <div class="block-data">Hash: </div><span>{{ block.hash }}</span><br>
+    <div class="block-data">Last hash: </div><span>{{ block.lastHash }}</span><br>
+    <div class="block-data">Nonce: </div><span>{{ block.nonce }}</span><br>
+    <div class="block-data">Difficulty: </div><span>{{ block.difficulty }}</span><br><br>
+    <nz-timeline *ngFor="let transaction of block.data">
+      <nz-timeline-item [nzDot]="dotTemplate">
+        <nz-table #table [nzData]="transaction.outputs" [nzFrontPagination]="false" [nzShowPagination]="false"
+                  [nzOuterBordered]="true" [nzBordered]="true" [nzTitle]="transactionInfo">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Amount</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let output of table.data; let i = index">
+              <td [style.color]="(i !== 0 || table.data.length === 1) ? 'darkgreen' : 'darkred'">
+                {{ (i !== 0 || table.data.length === 1) ? 'Recipient' : 'Sender' }}
+              </td>
+              <td>{{ transaction.outputs[i].amount}}</td>
+              <td>{{ transaction.outputs[i].address}}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+        <ng-template #transactionInfo style="background-color: aqua">
+          <div class="transaction-data">Transaction: </div><span>{{ transaction.id }}</span><br>
+          <div class="transaction-data">Timestamp: </div><span>{{ transaction.input.timestamp }}</span><br>
+          <div class="transaction-data">Sender address: </div><span>{{ transaction.input.address }}</span><br>
+          <div class="transaction-data">Sender balance: </div><span>{{ transaction.input.amount }}</span><br>
+          <div class="transaction-data">Signature: </div>
+          <pre class="signature-data"> {{ transaction.input.signature | json }}</pre>
+        </ng-template>
+        <br>
+      </nz-timeline-item>
+    </nz-timeline>
+    <ng-template #dotTemplate>
+      <i nz-icon nzType="clock-circle-o" style="font-size: 16px; color: teal"></i>
+    </ng-template>
+  </nz-card>
+</div>

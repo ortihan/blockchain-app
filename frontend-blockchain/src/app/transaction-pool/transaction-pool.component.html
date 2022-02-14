@@ -1,0 +1,65 @@
+<nz-card>
+  <nz-table
+    #table
+    [nzData]="transactionPool"
+    [nzFrontPagination]="false"
+    [nzShowPagination]="false"
+    [nzScroll]="{ y: '650px' }"
+    [nzOuterBordered]="true"
+    [nzLoading]="isLoading"
+  >
+    <thead>
+    <tr>
+      <th class="block-row" nzAlign="center" nzWidth="7%">Outputs</th>
+      <th class="block-row" nzAlign="center" nzWidth="15%">Id</th>
+      <th class="block-row" nzAlign="center" nzWidth="11%">Timestamp</th>
+      <th class="block-row" nzAlign="center" nzWidth="25%">Sender address</th>
+      <th class="block-row" nzAlign="center" nzWidth="25%">Sender balance</th>
+      <th class="block-row" nzAlign="center" nzWidth="30%">Signature:</th>
+    </tr>
+    <tr>
+      <td nzAlign="center">
+        <nz-empty *ngIf="transactionPool.length === 0" nzNotFoundContent="Transaction pool is empty!"></nz-empty>
+      </td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let transaction of table.data; let i = index">
+    <tr>
+      <td nzAlign="center" [nzShowExpand]="transaction.outputs.length !== 0" [(nzExpand)]="expandOutputs[i]"></td>
+      <td nzAlign="center">{{ transaction.id }}</td>
+      <td nzAlign="center">{{ transaction.input.timestamp }}</td>
+      <td>{{ transaction.input.address }}</td>
+      <td nzAlign="center">{{ transaction.input.amount }}</td>
+      <td><pre>{{ transaction.input.signature | json }}</pre></td>
+    </tr>
+    <tr [nzExpand]="expandOutputs[i]">
+      <nz-table #innerTable [nzData]="transaction.outputs" nzSize="middle" [nzShowPagination]="false"
+      [style.padding]="'10px'">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Amount</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let output of innerTable.data; let k = index">
+    <tr>
+      <td [style.color]="(k !== 0 || innerTable.data.length === 1) ? 'darkgreen' : 'darkred'">
+        {{ (k !== 0 || innerTable.data.length === 1) ? 'Recipient' : 'Sender' }}</td>
+      <td>{{ output.amount }}</td>
+      <td>{{ output.address }}</td>
+    </tr>
+    </tbody>
+  </nz-table>
+  </tr>
+  </tbody>
+  </nz-table>
+  <div>
+    <button nz-button type="submit" nzType="default" (click)="mineBlock()" [disabled]="transactionPool.length === 0">
+      MINE A NEW BLOCK <i nz-icon nzType="tool" nzTheme="fill"></i>
+    </button>
+  </div>
+</nz-card>
+
+
+

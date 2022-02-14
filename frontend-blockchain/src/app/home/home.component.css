@@ -1,0 +1,19 @@
+.icon-home {
+  padding: 195px;
+  font-size: 80px;
+  color: lightgrey;
+  align-content: center;
+}
+
+.div-home {
+  background-color: teal;
+  padding: 100px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+::ng-deep .ant-layout-content {
+  background-color: teal;
+}
+

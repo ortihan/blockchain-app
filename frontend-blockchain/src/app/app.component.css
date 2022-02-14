@@ -1,0 +1,24 @@
+
+nz-content {
+  padding-top: 64px;
+}
+
+nz-layout {
+  background-color: teal !important;
+}
+
+::ng-deep body {
+  background-color: teal !important;
+}
+
+button {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  margin-top: 120px;
+  margin-left: 270px;
+  margin-right: 40px;
+  background-color: lightgrey;
+  font-size: x-large;
+  border-width: medium;
+}

@@ -1,0 +1,14 @@
+
+<nz-layout>
+  <app-header *ngIf="showHeader" [peerName]="peerName"></app-header>
+  <nz-content>
+    <router-outlet></router-outlet>
+
+    <div class="url-div" *ngIf="!showHeader">
+      <button nz-button nzType="text" (click)="setUrl('http://localhost:3001', 'Peer 1')">Peer 1</button>
+      <button nz-button nzType="text" (click)="setUrl('http://localhost:3002', 'Peer 2')">Peer 2</button>
+      <button nz-button nzType="text" (click)="setUrl('http://localhost:3003', 'Peer 3')">Peer 3</button>
+    </div>
+
+  </nz-content>
+</nz-layout>

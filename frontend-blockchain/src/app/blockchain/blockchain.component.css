@@ -1,0 +1,65 @@
+
+.background {
+  color: darkgrey;
+  padding-bottom: 0px;
+}
+
+::ng-deep div.ant-card-body {
+  padding-bottom: 10px;
+}
+
+nz-card {
+  margin: 60px;
+  border-color: #001529;
+  border-width: medium;
+  background-color: lightgrey;
+}
+
+::ng-deep .ant-card-head{
+  background-color: #001529;
+  color: lightgrey;
+  border-color: #001529;
+  border-width: medium;
+}
+
+::ng-deep .ant-layout-content {
+  background-color: teal;
+}
+
+::ng-deep .ant-table.ant-table-bordered>.ant-table-title {
+  background-color: #FAFAFA;
+  border-width: thin;
+  /*border-color: black !important;*/
+}
+
+::ng-deep nz-table header {
+  background-color: lightgrey;
+}
+
+::ng-deep .ant-timeline-item {
+  padding: 0px;
+}
+
+.block-data {
+  display: inline-block;
+  font-size: medium;
+  font-weight: bolder;
+  width: 110px;
+}
+
+.transaction-data {
+  display: inline-block;
+  font-size: medium;
+  font-weight: bolder;
+  width: 150px;
+}
+
+::ng-deep .ant-timeline-item-head-custom {
+  background-color: lightgrey;
+}
+
+/*::ng-deep .ant-table.ant-table-bordered>.ant-table-title {*/
+/*  border-bottom-color: black;*/
+/*  border-bottom: 1px !important;*/
+/*}*/
+

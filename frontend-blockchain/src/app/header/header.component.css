@@ -1,0 +1,14 @@
+nz-header {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  z-index: 11;
+}
+
+::ng-deep .ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: teal;
+}
+
+::ng-deep .ant-menu-dark.ant-menu-horizontal>.ant-menu-item:hover {
+  background-color: teal;
+}

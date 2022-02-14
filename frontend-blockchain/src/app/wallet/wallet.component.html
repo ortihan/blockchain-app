@@ -1,0 +1,38 @@
+<div class="wallet-div">
+
+  <nz-card class="wallet-card" [nzTitle]="peerName">
+    <div class="wallet-info">Balance: </div><span>{{ wallet?.balance }}</span><br>
+    <div class="wallet-info">Public key: </div><span>{{ wallet?.publicKey }}</span>
+  </nz-card>
+
+  <button class="new-transaction-button" nz-button [disabled]="wallet?.balance === 0" nzType="dashed" (click)="toggleForm()">
+    New transaction
+  </button>
+
+  <nz-card *ngIf="showForm" class="form-card">
+    <form [formGroup]="transactionForm" (ngSubmit)="newTransaction()">
+
+      <nz-form-item>
+        <nz-form-label>Amount</nz-form-label>
+        <nz-form-control [nzErrorTip]="amountError">
+          <input nz-input type="text" id="amount" formControlName="amount">
+          <ng-template #amountError>
+            <nz-alert nzType="error" nzMessage="Invalid amount field!" nzShowIcon></nz-alert>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Recipient</nz-form-label>
+        <nz-form-control [nzErrorTip]="recipientError">
+          <input nz-input type="text" id="recipient" formControlName="recipient">
+          <ng-template #recipientError let-control>
+            <nz-alert *ngIf="control.invalid && (control.dirty || control.touched)" nzType="error" nzMessage="Invalid recipient field!" nzShowIcon></nz-alert>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <button class="submit-button" type="submit" nz-button nzType="default" [disabled]="transactionForm.invalid">Submit</button>
+    </form>
+  </nz-card>
+</div>

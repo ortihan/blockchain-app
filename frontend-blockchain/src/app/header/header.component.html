@@ -1,0 +1,13 @@
+
+<nz-header>
+  <div class="logo"></div>
+  <ul nz-menu nzTheme="dark" nzMode="horizontal">
+    <li nz-menu-item  [routerLink]="'/wallet'">Wallet</li>
+    <li nz-menu-item [routerLink]="'/blockchain'">Blockchain</li>
+    <li nz-menu-item [routerLink]="'/pool'">Pool</li>
+
+    <li [style.float]="'right'">{{ peerName }}</li>
+  </ul>
+</nz-header>
+
+

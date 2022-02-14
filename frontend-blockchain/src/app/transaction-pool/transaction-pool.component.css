@@ -1,0 +1,16 @@
+nz-card {
+  padding: 30px;
+  background-color: teal;
+  border: 0;
+}
+
+button {
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+nz-empty {
+  padding: 20px;
+  display: inline-block;
+  margin-left: 650px;
+}

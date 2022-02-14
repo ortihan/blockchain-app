@@ -1,0 +1,75 @@
+.ant-input {
+  width: 370px;
+}
+
+input {
+  width: 370px;
+}
+
+::ng-deep .ant-alert-error {
+  margin-bottom: 15px;
+  margin-top: 4px;
+  height: 30px;
+}
+
+::ng-deep .ant-card-head{
+  background-color: #001529;
+  color: lightgrey;
+  border-color: #001529;
+  border-width: medium;
+}
+
+nz-form-label {
+  font-weight: bolder;
+  width: 80px;
+}
+
+
+.wallet-card {
+  border-width: medium;
+  border-color: #001529;
+  background-color: honeydew;
+  margin: 20px;
+  width: 1230px;
+  height: 160px;
+}
+
+.form-card {
+  margin-left: 20px;
+  width: 500px;
+  height: fit-content;
+  background-color: honeydew;
+  border-width: thin;
+  border-color: black;
+}
+
+.wallet-info {
+  font-weight: bolder;
+  width: 80px;
+  display: inline-block;
+}
+
+form {
+  border-color: #001529;
+  border-width: thin;
+}
+
+.new-transaction-button {
+  margin: 20px;
+  background-color: honeydew;
+  font-weight: bolder;
+  border-width: thin;
+  border-color: #001529;
+}
+
+.submit-button {
+  float: right !important;
+}
+
+.error {
+  border-color: darkred;
+  background-color: lightcoral;
+  display: inline-block;
+  width: 350px;
+  height: 32px;
+}
