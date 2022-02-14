@@ -1,2 +1,2 @@
 # blockchain-app
- Demo blockchain application wtih backend in Node.js and frontend in Angular
+ Demo blockchain application with backend in Node.js and frontend in Angular
