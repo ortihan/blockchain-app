@@ -16,7 +16,7 @@ Time smo pokrenuli backend na portovima 3001, 3002 i 3003, te ih povezali web so
 
 5. U druga tri terminala otvoriti folder /frontend
 6. U prvom izvršiti naredbu: ng serve --port 4200
-7. U drugomu: ng serve --port 4201
+7. U drugom: ng serve --port 4201
 8. U trećem: ng serve --port 4202
 9. Zatim u internet pregledniku otvoriti adrese http://localhost:4200, http://localhost:4201 i http://localhost:4202 u tri taba
 10. U prvom tabu odabrati Peer 1, u drugom Peer 2 te u trećem Peer 3
